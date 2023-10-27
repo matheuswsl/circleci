@@ -1,0 +1,23 @@
+version: 2.1
+
+jobs:
+  say_hello:
+    docker: 
+      - image: cimg/base:2022.05
+    steps:
+      - run: echo 'Say Hello!'
+
+  say_goodbye:
+    docker:
+      - image: cimg/base:2022.05
+    steps:
+      - run: echo 'Say goodbye!'
+
+workflows:
+  say_hello_workflow:
+    jobs:
+      - say_hello
+
+  sa_goodbye_workflow:
+    jobs:
+      - say_goodbye
