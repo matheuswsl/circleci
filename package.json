@@ -1,0 +1,15 @@
+{
+  "name": "circleci",
+  "version": "1.0.0",
+  "repository": "git@github.com:matheuswsl/circleci.git",
+  "author": "matheuswsl <matheus.wsl@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "node ./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "typescript": "^5.2.2"
+  }
+}

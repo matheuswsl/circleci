@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "allowJs": true,
+    "skipLibCheck": true,
+  },
+  "exclude": ["node_modules", ".gitignore"],
+  "include": ["*.ts"]
+}

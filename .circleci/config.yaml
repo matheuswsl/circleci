@@ -1,23 +1,25 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@5.1.0
+
 jobs:
-  say_hello:
+  test:
     docker: 
       - image: cimg/base:2022.05
+    executor: node/default
     steps:
-      - run: echo 'Say Hello!'
-
-  say_goodbye:
-    docker:
-      - image: cimg/base:2022.05
-    steps:
-      - run: echo 'Say goodbye!'
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run build
+          name: Build
+      - run:
+          command: npm run test
+          name: Test
 
 workflows:
-  say_hello_workflow:
+  test_workflow:
     jobs:
-      - say_hello
-
-  sa_goodbye_workflow:
-    jobs:
-      - say_goodbye
+      - test
