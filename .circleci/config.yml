@@ -5,8 +5,6 @@ orbs:
 
 jobs:
   test:
-    docker: 
-      - image: cimg/base:2022.05
     executor: node/default
     steps:
       - checkout
